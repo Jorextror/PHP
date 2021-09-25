@@ -1,10 +1,20 @@
+<style>
+table, td, th {
+  border:1px solid;
+}
+</style>
+
+<table>
 <?php
 
-for ($i=0; $i < 11; $i++) { 
-    echo "Taula de multiplicar del $i <br>";
+for ($i=1; $i < 11; $i++) { 
+    echo "<tr>";
+    echo "<th> Taula de multiplicar $i <th>";
     for ($j=0; $j< 11; $j++) { 
-        echo "<tr>","<td>",$j,"x",$i,"=",$i*$j,"</td>","</tr>", "<tr>","<br>";
+        echo "<td>",$j,"x",$i,"=",$i*$j,"</td>";
     }
+    echo "</tr>";
 }
 
 ?>
+</table>

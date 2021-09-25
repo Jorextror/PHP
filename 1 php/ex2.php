@@ -14,6 +14,7 @@ echo "<tr>";
 echo "<th>","do while","</th>";
 do {
     $i++;
+    echo "<td>",$i,"<td>";
     if ($i%2==0) {
         echo "<td>",$i,"<td>";
     }
