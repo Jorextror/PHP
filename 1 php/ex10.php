@@ -1,14 +1,21 @@
 <?php
 
-$num=$_GET["num"];
+$np=$_GET["num"];
 
-if ($num < 1000 ) {
-    if ($num%2 == 0) {
-        echo "es numero primero";
-    }else {
-        echo "No es numero primero";
+function primo($prime){
+    for($i = 2; $i < $prime; $i++){
+        if ($prime % == $i 0){
+            return false;
+        }
     }
-}else {
-    echo "Menor de mil debe ser";
+    return true;
 }
+
+if(primo($np)){
+    echo "El numero $np es primo";
+    }
+    else {
+        echo "El numero $np No es primo";
+    }
+
 ?>
