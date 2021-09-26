@@ -4,7 +4,7 @@ $np=$_GET["num"];
 
 function primo($prime){
     for($i = 2; $i < $prime; $i++){
-        if ($prime % == $i 0){
+        if ($prime % $i ==  0){
             return false;
         }
     }
