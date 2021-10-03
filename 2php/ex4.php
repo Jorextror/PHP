@@ -1,6 +1,7 @@
 <?php
 /*Fes una pàgina on a partir d’un formulari on es recull una temperatura i en quina escala està, ens la la conversió.*/
 
+<<<<<<< HEAD
 function conversio($Grados,$Grados2,$num){
     $conv=$Grados.$Grados2;
     if ($conv=="FahrenheritCelsius"){
@@ -26,9 +27,20 @@ if (isset($_GET['Grados']) && isset($_GET['Grados2']) && isset($_GET['num'])){
     $Grados= $_GET['Grados'];
     $Grados2= $_GET['Grados2'];
     $num=floatval($_GET['num']);
+=======
+
+
+//revisa Get
+if (isset($_GET['num']) ){
+    // http://localhost/php/2%20php/ex3.php/?num=1
+    $mes=(int) $_GET['num'];
+>>>>>>> php/master
 } else {
     echo "No has passat cap paràmetre per la URL <br/>";
 }
 
+<<<<<<< HEAD
 conversio($Grados,$Grados2,$num);
+=======
+>>>>>>> php/master
 ?>
