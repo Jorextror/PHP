@@ -13,6 +13,3 @@
     <?php
         include '1footer.php';
     ?>
-
-
-
