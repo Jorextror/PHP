@@ -9,10 +9,10 @@ $values = array(
     "field2value"=>"pig",
     "field3value"=>"platypus"
 );
-// sortida
+
 $keysAndValues=[];
-foreach ($keys as $key => $value) {
-    $keysAndValues[$value] = $values[$key."value"];
+foreach ($keys as $keys1 => $value) {
+    $keysAndValues[$value] = $values[$keys1."value"];
 }
 print_r($keysAndValues);
 ?>
