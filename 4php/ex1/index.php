@@ -5,37 +5,24 @@ comprovació i missatges d'error; si la dada és correcte, missatge final.
 web1: pide text, va a web2,
 web2: confirma text(letra o numero nomes),  
 tornar web1: mostra ultim text-->
-
 <?php
-session_start();
-// if (!$_SESSION("usuario")) {
+    session_start();
+    $_SESSION["user"]="Jordi";
 ?>
-
 <!DOCTYPE html>
 <html>
 <body>
-
 <h1>Pagina 1</h1>
-
-<form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+<form method="post" action="p1.php">
     Text: <input type="text" name="fname">
     <input type="submit">
 </form>
-
-
-
-<?php
-// } else {
-
-    if (condition) {
-        # code...
-    }
-        $_SESSION["usuario"] = "jordi";
-
-        header('Location: http://localhost/php/4php/p1.php');
-        exit;
-?>
-    <a href="p1.php">1p.php</a>
-
 </body>
 </html>
+
+<?php
+    if (isset($_SESSION["user"])) {
+        print($_SESSION["salida"]);
+    }
+    $_SESSION["salida"]="";
+?>
