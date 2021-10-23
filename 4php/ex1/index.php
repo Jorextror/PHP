@@ -13,9 +13,9 @@ tornar web1: mostra ultim text-->
 <html>
 <body>
 <h1>Pagina 1</h1>
-<form method="post" action="p1.php">
+<form action="p1.php" method="post">
     Text: <input type="text" name="fname">
-    <input type="submit">
+    <input value="enviar" type="submit">
 </form>
 </body>
 </html>
