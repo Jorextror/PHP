@@ -5,8 +5,6 @@ variable auxiliar que indica la correcció de la dada; comprovació i missatges 
 si la dada és correcte, missatge final.*/
 session_start();
 $_SESSION["user"]="Jordi";
-// $text=$_POST["fname"];
-
 if (isset($_POST["fname"])){
     $text=$_POST["fname"];
     $acaba=False;
