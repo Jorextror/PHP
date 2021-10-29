@@ -9,7 +9,7 @@ amb un màxim de 3 estrelles.   -->
 <?php
     $visitas=1;
     if (isset($_COOKIE['cookie_name'])) {
-        $visitas+=$_COOKIE['cookie_name'];
+        $visitas+=(int) $_COOKIE['cookie_name'];
         echo "Visites ",$visitas;
         echo '<br>';
         if ($visitas >= 5) {
