@@ -7,14 +7,7 @@ El programa no ha de permetre escollir el mateix color de fons que de text. -->
     include_once 'includes/header.php';
 ?>
 
-<?php
-
-    setcookie('cookie_name', "galeta_creada que caduca d'aquí 15s", time()+60*60*24);
-    
-
-?>
-
-<form action="">
+<form action="" method="post" >
 <label for="letra">Choose a color letra:</label>
 <select name="letra" id="letra">
   <option value="black">black</option>
@@ -30,8 +23,24 @@ El programa no ha de permetre escollir el mateix color de fons que de text. -->
   <option value="green">green</option>
   <option value="red">red</option>
 </select>
+<input value="enviar" type="submit">
 </form>
 
+<?php
+if (isset($_POST['letra']) && isset($_POST['fons'])){
+  if ($_POST['letra'] != $_POST['fons']) {
+    // $letraf="color:".$_POST['letra'];
+    $style="color:".$_POST['letra'].";"."background-color:".$_POST['fons'].";";
+    echo '<body style=',$style,'>';
+
+    setcookie('letra', "letra", time()+10);
+    setcookie('fons', "fons", time()+10);
+  }
+} else {
+  echo "Error: Not foud color<br/>";
+}
+
+?>
 
 <?php
     include_once 'includes/footer.php';
