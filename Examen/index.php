@@ -1,13 +1,27 @@
 <?php
-    include_once 'includes/header.php';
+session_start();
 ?>
 
-<div>
-    <h1>Examen</h1>
-    <h2>Pagina inici</h2>
-    
-</div>
+<form action="sessio.php" method="POST">
+ 
+   <p>
+       <label for="usuari">Usuari</label>
+       <input type="text" name="usuari"  />
+   </p>
+ 
+   <p>
+       <label for="pw">Password</label>
+       <input type="password" name="pw"/>
+   </p>
+   <p>
+       <input type="submit" value="enviar"/>
+   </p>
+ 
+</form>
 
 <?php
-    include_once 'includes/footer.php';
+if (isset($_SESSION["missatge"])){
+    print_r($_SESSION["missatge"]);
+    echo $_SESSION["missatge"];
+}
 ?>

@@ -15,10 +15,11 @@ El programa no ha de permetre escollir el mateix color de fons que de text. -->
   <option value="green">green</option>
   <option value="red">red</option>
 </select>
+
 <br>
 <label for="fons">Choose a color fons:</label>
 <select name="fons" id="fons">
-  <option value="while">while</option>
+  <option value="white">white</option>
   <option value="yellow">yellow</option>
   <option value="green">green</option>
   <option value="red">red</option>
