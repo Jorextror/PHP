@@ -9,10 +9,10 @@ Esbrina com php desa la informació en la funció time() per exemple) -->
 ?>
 
 <?php
-    setcookie('cookie_name', time(), time()+60);
+    setcookie('cookie_name', time(), time()+60*60);
 
     function VisitaTime($t){
-        echo "Desde la ultima visita(min-seg): ",date("i-s",time()-$t);
+        echo "Desde la ultima visita: ",date("H:i:s",(time()-3600)-$t);#-3600 porque cuenta 1h de mas con el "H"
     }
 
     if (isset($_COOKIE['cookie_name'])) {

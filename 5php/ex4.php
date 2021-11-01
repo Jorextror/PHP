@@ -30,12 +30,12 @@ El programa no ha de permetre escollir el mateix color de fons que de text. -->
 <?php
 if (isset($_POST['letra']) && isset($_POST['fons'])){
   if ($_POST['letra'] != $_POST['fons']) {
-    // $letraf="color:".$_POST['letra'];
+    // añadimos el style en el body solo da efecto al primero atributo porque no tiene espacio, pero si le doy espacio se sale del entra comillas del style :( podria meter un style a todos los <p> pero creo que no seria muy adecuado
     $style="color:".$_POST['letra'].";"."background-color:".$_POST['fons'].";";
     echo '<body style=',$style,'>';
 
-    setcookie('letra', "letra", time()+10);
-    setcookie('fons', "fons", time()+10);
+    setcookie('letra', "letra", time()+60);
+    setcookie('fons', "fons", time()+60);
   }
 } else {
   echo "Error: Not foud color<br/>";
