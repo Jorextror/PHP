@@ -46,10 +46,10 @@ if (empty($_SESSION["missatge"])){
                 <br/><br/><br/><br/>
 
                 Idiomes:<input type="checkbox" name="idiomas" value="ca">Català
-                <input type="checkbox" name="idiomas" value="es">Español
-                <input type="checkbox" name="idiomas" value="en">Anglès
-                <input type="checkbox" name="idiomas" value="fr">Francés
-                <input type="checkbox" name="idiomas" value="al">Alemà
+                <input type="checkbox" name="idiomas" value=0>Español
+                <input type="checkbox" name="idiomas" value=1>Anglès
+                <input type="checkbox" name="idiomas" value=2>Francés
+                <input type="checkbox" name="idiomas" value=3>Alemà
                 <span class="error"><?php print_r($_SESSION["missatge"]["idiomas"]);?></span><br/>
 
                 <p>
