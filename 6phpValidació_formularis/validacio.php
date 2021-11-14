@@ -24,9 +24,6 @@ if(isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['passw'])) {
     //idiomas
     if (isset($_POST['idiomas'])){
         $idiomas = $_POST['idiomas'];
-        $_SESSION["missatge"]["idiomas"]="a";
-    }else{
-        // $_SESSION["missatge"]["idiomas"]="Nomes es pot escollir un idioma";
         $_SESSION["missatge"]["idiomas"]=$idiomas;
     }
     //mail

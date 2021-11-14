@@ -45,11 +45,11 @@ if (empty($_SESSION["missatge"])){
                 <span class="error"><?php print_r($_SESSION["missatge"]["formacio"]);?></span><br/>
                 <br/><br/><br/><br/>
 
-                Idiomes:<input type="checkbox" name="idiomas" value="ca">Català
-                <input type="checkbox" name="idiomas" value=0>Español
-                <input type="checkbox" name="idiomas" value=1>Anglès
-                <input type="checkbox" name="idiomas" value=2>Francés
-                <input type="checkbox" name="idiomas" value=3>Alemà
+                Idiomes:<input type="radio" name="idiomas" value="ca">Català
+                <input type="radio" name="idiomas" value=0>Español
+                <input type="radio" name="idiomas" value=1>Anglès
+                <input type="radio" name="idiomas" value=2>Francés
+                <input type="radio" name="idiomas" value=3>Alemà
                 <span class="error"><?php print_r($_SESSION["missatge"]["idiomas"]);?></span><br/>
 
                 <p>
