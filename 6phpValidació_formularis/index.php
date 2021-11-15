@@ -1,14 +1,5 @@
 <?php
 session_start();
-$timeout = 60;
-if (isset($_SESSION["timeout"])) {
-    $limit= time() - $_SESSION["timeout"];
-    if ($limit > $timeout) {
-        header("Location: index.php");
-    }
-}
-$_SESSION["timeout"]=time();
-
 if (empty($_SESSION["missatge"])){
     $_SESSION["missatge"]=array("nom"=>"","passw"=>"","formacio"=>"","idiomas"=>"","mail"=>"","web"=>"");
 }
