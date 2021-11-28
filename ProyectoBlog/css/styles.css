@@ -1,9 +1,16 @@
-/* Global */
+/* GLOBAL */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 body {
     font-family: "Montserrat", sans-serif;
+    background-image: url("https://ak.picdn.net/shutterstock/videos/6232958/thumb/1.jpg?ip=x480");
   }
-/* menu */
+.header{
+  /* background-color: rgb(25, 0, 66); */
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+/* ---- MENU ----- #transform i transition és el movimiento del punto debajo del menú*/
 .navMenu {
     background: #15172b;/* #272727; */
   top: 10%;
@@ -11,6 +18,7 @@ body {
   padding: 15px;
   border-radius: 5px;
 }
+/* los apartados del menu */
 .navMenu a {
   color: #f6f4e6;
   text-decoration: none;
@@ -22,15 +30,14 @@ body {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 .navMenu a:hover {
   color: #fddb3a;
 }
-
+/* la imagen debajo del menu */
 .navMenu .dot {
   width: 6px;
   height: 6px;
-  background: #fddb3a;
+  /* background: #fddb3a; */
   border-radius: 50%;
   opacity: 0;
   -webkit-transform: translateX(30px);
@@ -38,7 +45,7 @@ body {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
+/* cada apartado del menu para seleccionar */
 .navMenu a:nth-child(1):hover ~ .dot {
   -webkit-transform: translateX(30px);
   transform: translateX(30px);
@@ -46,7 +53,6 @@ body {
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
-
 .navMenu a:nth-child(2):hover ~ .dot {
   -webkit-transform: translateX(110px);
   transform: translateX(110px);
@@ -54,7 +60,6 @@ body {
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
-
 .navMenu a:nth-child(3):hover ~ .dot {
   -webkit-transform: translateX(200px);
   transform: translateX(200px);
@@ -62,7 +67,6 @@ body {
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
-
 .navMenu a:nth-child(4):hover ~ .dot {
   -webkit-transform: translateX(285px);
   transform: translateX(285px);
@@ -70,16 +74,27 @@ body {
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
-/* form */
+
+
+
+/* ---- FORM ----- */
+.lateral{
+  width: 100%;
+}
 .form {
+    margin: 5px;
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 500px;
+    height: 420px;
     padding: 20px;
     width: 320px;
+    margin-right: 0px;
+    float: right;
   }
-  
+  .form2 {
+    height: 580px;
+  }
   .title {
     color: #eee;
     font-family: sans-serif;
@@ -105,7 +120,6 @@ body {
   .ic1 {
     margin-top: 40px;
   }
-  
   .ic2 {
     margin-top: 30px;
   }
@@ -123,6 +137,7 @@ body {
     width: 100%;
   }
   
+  /* la caja encima del input */
   .cut {
     background-color: #15172b;
     border-radius: 10px;
@@ -132,13 +147,12 @@ body {
     top: -20px;
     transform: translateY(0);
     transition: transform 200ms;
-    width: 76px;
+    width: 86px;
   }
-  
   .cut-short {
     width: 50px;
   }
-  
+
   .input:focus ~ .cut,
   .input:not(:placeholder-shown) ~ .cut {
     transform: translateY(8px);
@@ -186,3 +200,22 @@ body {
   .submit:active {
     background-color: #06b;
   }
+
+.box{
+  margin-top: 5px;
+  background-color: #0f0033;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 80%;
+  padding: 20px;
+  width: 65%;
+  color: white;
+}
+.box h1{
+  text-align: center;
+}
+
+footer{
+  color: white;
+}
+.error {color: #FF0000;}

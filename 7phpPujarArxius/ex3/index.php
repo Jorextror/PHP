@@ -5,7 +5,6 @@ csv (que ja contindrà 100 línies com a dades fake) en format csv.  -->
 llegir les dades de l’arxiu i mostrar-les en una taula de màxim 20 files, fes paginació. (Link inici, anterior - següent, fi) (<<  <  >  >>)
 Hi ha d’haver 2 botons que mostren les dades ordenades o bé per cognoms o bé per nom
 hi ha d’haver un formulari amb 2 inputs format data, i mostrar només els usuaris amb data de naixament entre aquestes dues dates -->
-
 <?php
 session_start();
 ?>
@@ -15,3 +14,12 @@ session_start();
     Data de naixament: <input type="date" name="data"><br>
     <input type="submit" value="Subir">
 </form>
+
+<button onclick="location='mostrar_dades.php'" type="button">mostrar dades</button>
+
+<?php
+if (!isset($_SESSION["dades"])) {
+    $_SESSION["dades"]="";
+}
+print_r($_SESSION["dades"])
+?>

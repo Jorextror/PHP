@@ -5,18 +5,17 @@ if(isset($_POST["nom"]) &&  isset($_POST["cognom"]) &&  isset($_POST["data"])){
     $cognom=$_POST["cognom"];
     $data_naixement=$_POST["data"];
     
-    $file = fopen("contacts.csv","a+");
+    $file = fopen("dades.csv","a+");
     rewind($file);
-    fwrite($file, $nom);
-    fwrite($file, $cognom);
+    fwrite($file, "\n".$nom."," );
+    fwrite($file, $cognom.",");
     fwrite($file, $data_naixement);
     fflush($file);
 
-    echo fgetc($file);
+    $_SESSION["dades"]=fgetc($file);
     fclose($file);
-// }else{
-
+}else{
+    $_SESSION["dades"]="No tiene los campos suficientes para guardarlo";
 }
-
-// header("Location: index.php");
+header("Location: index.php");
 ?>
