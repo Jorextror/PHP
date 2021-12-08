@@ -6,9 +6,10 @@ $servername = "localhost";
 $username = "admin";
 $pasw = "OEh8lNo#nRZB";
 $bd = "blog";
+$mysqli = mysqli_connect($servername, $username, $pasw, $bd);
+
 $_SESSION["missatge"]="";
 $missatge="";
-$mysqli = mysqli_connect($servername, $username, $pasw, $bd);
 
 if (isset($_POST["nom"]) && isset($_POST["cognom"]) && isset($_POST["email"]) && isset($_POST["pasw"])) {
     echo("asfsa");
@@ -25,8 +26,8 @@ if (isset($_POST["nom"]) && isset($_POST["cognom"]) && isset($_POST["email"]) &&
         $missatge="Mail no existeix";
     }
     // passw
-    if (!preg_match("/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])[0-9A-Za-z+*-]{8,}$/",$_POST["pasw"])){
-        $missatge="Contrasenya no apta(8 caràcters mínims, una: mayus, minuscula, enter, carct especial(-/*+))";
+    if (!preg_match("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",$_POST["pasw"])){
+        $missatge="Debe contener al menos un número y una letra mayúscula y minúscula, y al menos 8 o más caracteres";
     }
     if ($missatge=="") {
         $nom = $_POST['nom'];

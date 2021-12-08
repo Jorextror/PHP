@@ -6,13 +6,13 @@ body {
   }
 .header{
   /* background-color: rgb(25, 0, 66); */
-  padding: 15px;
+  padding: 5px;
   text-align: center;
   color: white;
 }
 /* ---- MENU ----- #transform i transition és el movimiento del punto debajo del menú*/
 .navMenu {
-    background: #15172b;/* #272727; */
+  background: #15172b;/* #272727; */
   top: 10%;
   left: 15%;
   padding: 15px;
@@ -45,6 +45,15 @@ body {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+
+.navMenu .logout{
+  float: right;
+  padding: 10px;
+}
+.navMenu .logout:hover {
+  color: red;
+}
+
 /* cada apartado del menu para seleccionar */
 .navMenu a:nth-child(1):hover ~ .dot {
   -webkit-transform: translateX(30px);
@@ -74,8 +83,13 @@ body {
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
-
-
+.navMenu a:nth-child(5):hover ~ .dot {
+  -webkit-transform: translateX(800px);
+  transform: translateX(800px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
 
 /* ---- FORM ----- */
 .lateral{
@@ -213,6 +227,17 @@ body {
 }
 .box h1{
   text-align: center;
+}
+
+.boxin{
+  margin-top: 5px;
+  background-color: #0f0033;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 80%;
+  padding: 20px;
+  width: 100%;
+  color: white;
 }
 
 footer{
