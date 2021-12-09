@@ -3,7 +3,7 @@
     <a href="#">Home</a>
     <!-- mostra les categories en el menu cuando se logean -->
     <?php if ($_SESSION["login"] === 1) {
-      include "include/mostraCategories.php";
+      include "mostraCategories.php";
       $categories=mostraCategories();
       for ($i=0; $i < count($categories); $i++) {
           echo "<a href='".$categories[$i]."'>".$categories[$i]."</a>";

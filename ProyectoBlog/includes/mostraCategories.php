@@ -1,5 +1,5 @@
 <?php
-include "connect.php";
+include "conectar.php";
 function mostraCategories(){
     $servername = "localhost";
     $username = "admin";

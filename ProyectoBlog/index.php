@@ -15,6 +15,9 @@
     if (empty($_SESSION["missatge"])){
       $_SESSION["missatge"]="";
     }
+    if (empty($_SESSION["registrar"])){
+      $_SESSION["registrar"]="";
+    }
     if (!isset($_SESSION["login"])) {
       $_SESSION["login"]=0;
     }
@@ -33,10 +36,12 @@
   <div class="box" >
     <h1>Welcome</h1>
   </div>
-  <?php }else{?>
-    <div class="boxin" >
-      <h1>Blog principal</h1>
-    </div>
+  <?php }?>
+
+  <?php if ($_SESSION["login"] === 1) {?>
+  <div class="box boxin" >
+    <h1>Blog principal</h1>
+  </div>
   <?php }?>
 
 <!-- FOOTER -->
