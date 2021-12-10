@@ -41,6 +41,17 @@
   <?php if ($_SESSION["login"] === 1) {?>
   <div class="box boxin" >
     <h1>Blog principal</h1>
+    <?php if ($_SESSION["login"] === 1) {
+      include "includes/mostrarEntrada.php";
+      include "includes/mostraCategories.php";
+      $entrada=mostraEntrada();
+      for ($i=0; $i < count($entrada); $i++) {
+          print_r($entrada[$i][2]);
+
+          $categ=mostraCategories();
+          print_r($categ[$entrada[$i][3]]);
+      }
+    }?>
   </div>
   <?php }?>
 
