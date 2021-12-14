@@ -40,15 +40,14 @@
     <h1>Blog principal</h1>
     <?php if ($_SESSION["login"] === 1) {
       include "includes/mostrarEntrada.php";
-      include "includes/mostraCategories.php";
+      // include "includes/mostraCategories.php";
       $entrada=mostraEntrada();
       for ($i=0; $i < count($entrada); $i++) {
           $categ=mostraCategories();
-          $entradap=$entrada[$i];
-          include "includes/definirentrada.php"
+          //$entradap=$entrada[$i];
+          //include "includes/definirentrada.php";
           print_r($categ[$entrada[$i][3]]);
           print_r($categ[$entrada[$i][4]]);
-
       }
     }?>
   </div>
