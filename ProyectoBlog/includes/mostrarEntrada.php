@@ -8,7 +8,7 @@ function mostraEntrada(){
     $mysqli = mysqli_connect($servername, $username, $pasw, $bd);
     $entra=[];
     #select de las categories
-    $entrada=$mysqli -> query("SELECT usuari_id,categoria_id,titol,descripcio,data FROM entrades;");
+    $entrada=$mysqli -> query("SELECT * FROM entrades;");
     #va extraiendo cada categoria para insertarlas en lista
     for ($i=0; $i < $entrada -> num_rows; $i++){ 
         $entra[$i]=mysqli_fetch_row($entrada);
