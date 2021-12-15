@@ -8,7 +8,7 @@
     $bd = "blog";
 
     $_SESSION["missatge"]="";
-    $_SESSION["registrar"]="";//para que deje de mostrar el usuario creado en registrar
+    unset($_SESSION['registrar']);//para que deje de mostrar el usuario creado en registrar
     // crear connection
     $mysqli = mysqli_connect($servername, $username, $pasw, $bd);
     // check connection

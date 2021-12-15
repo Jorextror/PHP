@@ -14,5 +14,4 @@ function mostraCategories(){
         $categ[$i]=mysqli_fetch_row($categories)[0];
     }
     return $categ;
-}
-?>
+}?>

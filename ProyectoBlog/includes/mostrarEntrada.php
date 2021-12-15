@@ -7,9 +7,9 @@ function mostraEntrada(){
     $bd = "blog";
     $mysqli = mysqli_connect($servername, $username, $pasw, $bd);
     $entra=[];
-    #select de las categories
+    #select de las entradas
     $entrada=$mysqli -> query("SELECT * FROM entrades;");
-    #va extraiendo cada categoria para insertarlas en lista
+    #va extraiendo cada entrada para insertarlas en lista
     for ($i=0; $i < $entrada -> num_rows; $i++){ 
         $entra[$i]=mysqli_fetch_row($entrada);
     }
