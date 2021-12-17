@@ -220,7 +220,6 @@ body {
   background-color: #0f0033;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 80%;
   padding: 20px;
   width: 65%;
   color: white;
@@ -240,3 +239,11 @@ footer{
   color: white;
 }
 .error {color: #FF0000;}
+
+.CC{
+  background-color: #06b;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 20%;
+  text-align: center;
+}

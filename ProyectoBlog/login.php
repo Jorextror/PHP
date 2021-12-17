@@ -19,20 +19,16 @@
     if (isset($_POST["pasw"]) && isset($_POST["email"])) {
         $email = $_POST["email"];
         $pasw = $_POST["pasw"];
-        // var_dump($pasw);
         // busquem l'usuari que tingui aquest mail en la taula usuaris
         $login=$mysqli -> query("SELECT * FROM usuaris WHERE email='$email';");
         // comprovem que hi sigui
         if($login && mysqli_num_rows($login)==1) {
             // fa un array associatiu del usuari
             $usuari = mysqli_fetch_assoc($login);
-            var_dump($usuari['password']);
-            $_SESSION["usuari"]=$usuari['nom']." ".$usuari['cognom'];
+            $_SESSION['nom']=$usuari['nom'];
+            $_SESSION["nomid"]=$usuari['id'];
             // ara ja podem comprovar el password
-            // print_r($usuari['password']);
-            var_dump(password_verify($pasw,$usuari['password']));
             if (password_verify($pasw,$usuari['password'])) {
-                echo("pass corr");
                 $_SESSION["login"]=1;
             }else {
                 $_SESSION["missatge"]="No concide o no existe el usuario o contraseña";

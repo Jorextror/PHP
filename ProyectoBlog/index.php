@@ -35,7 +35,7 @@
   <div class="box" ><h1>Welcome</h1></div>
   <?php }?>7
   <?php if ($_SESSION["login"] === 1) {  ?>
-    <div class="CC" ><h1>Crear categoria</h1></div>
+    <div class="CC" ><h3> <a href="CrearCateg.php">Crear categoria</a> </h3></div>
   <div class="box boxin" >
     <h1>Blog principal</h1>
     <?php if ($_SESSION["login"] === 1) {

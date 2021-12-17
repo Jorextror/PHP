@@ -12,7 +12,6 @@ $_SESSION["registrar"]="";
 $missatge="";
 
 if (isset($_POST["nom"]) && isset($_POST["cognom"]) && isset($_POST["email"]) && isset($_POST["pasw"])) {
-    echo("asfsa");
     //nom
     if (!preg_match("/^[A-Za-z ]+$/",$_POST["nom"])) {
         $missatge="Nom només lletras sisplau";
@@ -26,9 +25,9 @@ if (isset($_POST["nom"]) && isset($_POST["cognom"]) && isset($_POST["email"]) &&
         $missatge="Mail no existeix";
     }
     // passw
-    // if (!preg_match("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",$_POST["pasw"])){
-    //     $missatge="Debe contener al menos un número y una letra mayúscula y minúscula, y al menos 8 o más caracteres";
-    // }
+    if (!preg_match("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",$_POST["pasw"])){
+        $missatge="Debe contener al menos un número y una letra mayúscula y minúscula, y al menos 8 o más caracteres";
+    }
     if ($missatge=="") {
         $nom = $_POST['nom'];
         $cognom = $_POST["cognom"];
