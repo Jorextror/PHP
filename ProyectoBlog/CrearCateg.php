@@ -6,6 +6,12 @@
     <title>Crear Categoria</title>
 </head>
 <body>
+<?php
+    session_start();
+    include 'includes/header.php';
+    include 'includes/menu.php';
+?>
+
     <h1>Crear categories</h1>
     <p>Afegeix noves categories al blog</p>
 
@@ -22,5 +28,7 @@
         <input type="text" name="categ" id="categ"  require>
         <input type="submit" value="Desar">
     </form>
+
+    <?php include 'includes/footer.php';?>
 </body>
 </html>

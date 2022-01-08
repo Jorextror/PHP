@@ -11,16 +11,30 @@
 
     if (isset($_POST["titol"]) && isset($_POST["desc"])){
         if (!preg_match("/^[A-Za-z ]+$/",$_POST["titol"])) {
-            $_SESSION["titol"]="El titol només acepta lletras";
+            $_SESSION["entra"]="El titol només acepta lletras";
         }else{
-            $userid=$_SESSION["nomid"];
+            $userID=$_SESSION["id"];
             $categ=$_POST["categ"];
             $titol=$_POST["titol"];
             $desc=$_POST["desc"];
             include "includes/definirCategoria.php";
-            $categid=GetCategoriaNom($categ);
+            $categid=GetCategoriaId($categ);
+            echo($categ);
             echo($categid);
-            $sql = "INSERT INTO entrades VALUES (null,'$userid','$categid','$titol','$desc',CURDATE());";
+            if(!isset($_GET["editar"])){
+                $sql = "INSERT INTO entrades VALUES (null,'$userID','$categid','$titol','$desc',CURDATE());";
+            }else{
+                $entrada_id=$_GET["editar"];
+                $sql = "UPDATE entrades SET categoria_id = '$categ', titol='$titol',descripcio'$desc' WHERE id=$entrada_id AND usuari_id=$userID";
+
+                if ($mysqli -> query($sql) === TRUE){
+                    $_SESSION["entraError"]="Entrada creat Correctament!";
+                }else {
+                    $_SESSION["entraError"]="Error al crear l'entrada, intenta-ho de nou: \n".$mysqli->error;
+                }
+                header("Location: entradaEditar.php");
+            }
+            
             if ($mysqli -> query($sql) === TRUE){
                 $_SESSION["entra"]="Entrada creat Correctament!";
             }else {
@@ -28,5 +42,5 @@
             }
         }
     }
-// header("Location: CrearEntra.php");
+header("Location: CrearEntra.php");
 ?>

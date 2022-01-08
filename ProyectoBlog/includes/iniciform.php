@@ -4,6 +4,7 @@
         <div class="title">Iniciar Sesion</div>
             <div class="subtitle"></div>
 
+            
             <div class="error"><?php  echo($_SESSION["missatge"])?></div>
             <!-- Campos -->
             <form action="login.php" method="POST">

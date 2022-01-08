@@ -1,15 +1,18 @@
 <link rel="stylesheet" href="css/styles.css">
 <nav class="navMenu">
-    <a href="#">Home</a>
+    <a href="restar.php">Home</a>
     <!-- mostra les categories en el menu cuando se logean -->
     <?php if ($_SESSION["login"] === 1) {
       include "mostraCategories.php";
+      include "definirCategoria.php";
       $categories=mostraCategories();
       for ($i=0; $i < count($categories); $i++) {
-          echo "<a href='".$categories[$i]."'>".$categories[$i]."</a>";
+          $categid=GetCategoriaId($categories[$i]);
+          echo "<a href='filtrarCategories.php?id=".$categid[$i]."'>".$categories[$i]."</a>";
+          // echo "<a href='#'> <form action='filtrarCategories.php'><input type='hidden' name='id' value=".$categid[$i].">".$categories[$i]."</form></a>";
       }
     }?>
-    <a href="#">About</a>
+    <a href="about.php">About</a>
     <a href="#">Contacte</a>
     <img src="https://images.vexels.com/media/users/3/143157/isolated/preview/07f636024d3d7f8a4fdf63e41e09142d-icono-de-pate-de-jamon.png" width="30" >
     <!-- Mostra el logout en el menu -->

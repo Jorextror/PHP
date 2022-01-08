@@ -10,17 +10,18 @@
     session_start();
     include 'includes/header.php';
     include 'includes/menu.php';
+    $entrada_id=$_GET["id"];
 ?>
-    <h1>Crear entrada</h1>
-    <p>Afegeix noves entrada al blog</p>
+    <h1>Editar categories</h1>
+    <p>Editar categories al blog</p>
 
     <?php
-        if (empty($_SESSION["entra"])){
-            $_SESSION["entra"]="";
+        if (empty($_SESSION["entraError"])){
+            $_SESSION["entraError"]="";
           }
-        echo($_SESSION["entra"]);
+        echo($_SESSION["entraError"]);
     ?>
-    <form action="validarEntra.php" method="post">
+    <form action="validarEntra.php?editar=<?=$entrada_id?>" method="post">
         <label for="Titol de la entrada">Titol de la entrada</label><br>
         <input type="text" name="titol" id="titol" require><br><br>
         <?php$_SESSION["titol"]?><br>
@@ -36,7 +37,7 @@
                 }?>
         </select><br><br>
 
-        <input type="submit" value="Desar">
+        <input type="submit" value="Actualitzar">
     </form>
 
     <?php include 'includes/footer.php';?>

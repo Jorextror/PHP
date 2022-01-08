@@ -25,11 +25,12 @@
         if($login && mysqli_num_rows($login)==1) {
             // fa un array associatiu del usuari
             $usuari = mysqli_fetch_assoc($login);
-            $_SESSION['nom']=$usuari['nom'];
-            $_SESSION["nomid"]=$usuari['id'];
             // ara ja podem comprovar el password
             if (password_verify($pasw,$usuari['password'])) {
                 $_SESSION["login"]=1;
+                $_SESSION['nom']=$usuari['nom'];
+                $_SESSION["email"]=$usuari["email"];
+                $_SESSION["id"]=$usuari["id"];
             }else {
                 $_SESSION["missatge"]="No concide o no existe el usuario o contraseña";
             }
