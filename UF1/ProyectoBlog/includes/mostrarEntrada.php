@@ -25,6 +25,6 @@ function mostraUnaEntrada($id){
     #select de las entradas
     $entrada=$mysqli -> query("SELECT * FROM entrades where id=$id;");
     #va extraiendo cada entrada para insertarlas en lista
-    return mysqli_fetch_row($entrada)[0];
+    return mysqli_fetch_row($entrada);
 }
 ?>

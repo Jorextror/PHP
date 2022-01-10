@@ -16,7 +16,6 @@
     <p>Afegeix noves categories al blog</p>
 
     <?php
-        session_start();
         if (empty($_SESSION["categ"])){
             $_SESSION["categ"]="";
           }

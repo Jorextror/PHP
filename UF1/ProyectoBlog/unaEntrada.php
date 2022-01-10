@@ -4,6 +4,7 @@ include 'includes/header.php';
 include 'includes/menu.php';
 
 $id=$_GET["id"];
+include 'includes/mostrarEntrada.php';
 $entrada=mostraUnaEntrada($_GET["id"]);
 
 echo("<h1>".$entrada[3]."</h1>");

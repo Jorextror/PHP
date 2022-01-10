@@ -30,7 +30,7 @@
                 if ($mysqli -> query($sql) === TRUE){
                     $_SESSION["entraError"]="Entrada creat Correctament!";
                 }else {
-                    $_SESSION["entraError"]="Error al crear l'entrada, intenta-ho de nou: \n".$mysqli->error;
+                    $_SESSION["entraError"]="Error al crear l'entrada, intenta-ho de nou: \n";
                 }
                 header("Location: entradaEditar.php");
             }
@@ -38,7 +38,7 @@
             if ($mysqli -> query($sql) === TRUE){
                 $_SESSION["entra"]="Entrada creat Correctament!";
             }else {
-                $_SESSION["entra"]="Error al crear l'entrada, intenta-ho de nou: \n".$mysqli->error;
+                $_SESSION["entra"]="Error al crear l'entrada, intenta-ho de nou: \n";
             }
         }
     }

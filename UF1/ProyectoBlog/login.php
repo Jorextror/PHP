@@ -29,6 +29,7 @@
             if (password_verify($pasw,$usuari['password'])) {
                 $_SESSION["login"]=1;
                 $_SESSION['nom']=$usuari['nom'];
+                $_SESSION['cognom']=$usuari['cognom'];
                 $_SESSION["email"]=$usuari["email"];
                 $_SESSION["id"]=$usuari["id"];
             }else {

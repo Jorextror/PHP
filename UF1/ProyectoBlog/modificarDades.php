@@ -23,13 +23,13 @@
 
     <form action="validarModificarDades.php" method="post">
         <label for="Nom">Nom</label><br>
-        <input type="text" name="nom" id="nom" require><br><br>
+        <input type="text" name="nom" id="nom" value="<?=$_SESSION['nom']?>" require><br><br>
 
         <label for="Cognom">Cognom</label><br>
-        <input type="text" name="cognom" id="cognom" require><br><br>
+        <input type="text" name="cognom" id="cognom" value="<?=$_SESSION['cognom']?>" require><br><br>
 
         <label for="email">Email</label><br>
-        <input type="email" name="email" id="email" require><br><br>
+        <input type="email" name="email" id="email" value="<?=$_SESSION['email']?>" require><br><br>
 
         <input type="submit" value="Modificar">
     </form>
