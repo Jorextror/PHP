@@ -19,6 +19,8 @@
             $_SESSION["entra"]="";
           }
         echo($_SESSION["entra"]);
+
+        
     ?>
     <form action="validarEntra.php" method="post">
         <label for="Titol de la entrada">Titol de la entrada</label><br>
@@ -29,9 +31,9 @@
         <label for="Categories">Categories</label><br>
         <select id="categ" name="categ">
             <?php
-                include "includes/mostraCategories.php";
+                include "UF1\ProyectoBlog\includes\mostraCategories.php";
                 $categories=mostraCategories();
-                 for ($i=0; $i < count($categories); $i++) {
+                for ($i=0; $i < count($categories); $i++) {
                     echo "<option value='".$categories[$i]."'>".$categories[$i]."</option>";
                 }?>
         </select><br><br>

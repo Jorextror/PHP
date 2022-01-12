@@ -1,6 +1,6 @@
 <?php
-include "conectar.php";
 function mostraCategories(){
+    include "conectar.php";
     $servername = "localhost";
     $username = "admin";
     $pasw = "OEh8lNo#nRZB";
@@ -17,6 +17,7 @@ function mostraCategories(){
 }
 
 function mostraCategoriesNom($id){
+    include "conectar.php";
     $servername = "localhost";
     $username = "admin";
     $pasw = "OEh8lNo#nRZB";

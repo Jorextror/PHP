@@ -35,7 +35,7 @@
         <label for="Categories">Categories</label><br>
         <select id="categ" name="categ">
             <?php
-                include "includes/mostraCategories.php";
+                include "UF1\ProyectoBlog\includes\mostraCategories.php";
                 $categories=mostraCategories();
                 for ($i=0; $i < count($categories); $i++) {
                     echo "<option value='".$categories[$i]."'> ".$categories[$i]." </option>";

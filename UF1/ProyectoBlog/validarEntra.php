@@ -23,6 +23,11 @@
             echo($categid);
             if(!isset($_GET["editar"])){
                 $sql = "INSERT INTO entrades VALUES (null,'$userID','$categid','$titol','$desc',CURDATE());";
+                if ($mysqli -> query($sql) === TRUE){
+                    $_SESSION["entra"]="Entrada creat Correctament!";
+                }else {
+                    $_SESSION["entra"]="Error al crear l'entrada, intenta-ho de nou: \n";
+                }
             }else{
                 $entrada_id=$_GET["editar"];
                 $sql = "UPDATE entrades SET categoria_id = '$categ', titol='$titol',descripcio'$desc' WHERE id=$entrada_id AND usuari_id=$userID";
@@ -33,12 +38,6 @@
                     $_SESSION["entraError"]="Error al crear l'entrada, intenta-ho de nou: \n";
                 }
                 header("Location: entradaEditar.php");
-            }
-            
-            if ($mysqli -> query($sql) === TRUE){
-                $_SESSION["entra"]="Entrada creat Correctament!";
-            }else {
-                $_SESSION["entra"]="Error al crear l'entrada, intenta-ho de nou: \n";
             }
         }
     }
