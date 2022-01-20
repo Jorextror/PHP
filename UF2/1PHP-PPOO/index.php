@@ -10,6 +10,12 @@
     <form action="formularis.php" method="post">
         <label for="id">Id del formulari</label>
         <input type="text" name="id" id="id"><br>
+        <?php session_start();
+        if (!empty($_SESSION["idV"])){
+            echo $_SESSION["idV"];
+            echo "<br>";
+        }
+        ?>
 
         <label for="method">Method</label>
         <select name="method" id="method">
@@ -19,9 +25,21 @@
 
         <label for="action">Action del formulari</label>
         <input type="text" name="action" id="action" value=".php" ><br>
+        <?php 
+        if (!empty($_SESSION['actionV'])) {
+            echo $_SESSION['actionV'];
+            echo "<br>";
+        }
+        ?>
 
         <label for="camps">Nombre de camps</label>
         <input type="number" name="camps" id="camps"><br>
+        <?php
+        if (!empty($_SESSION["campsV"])){
+            echo $_SESSION["campsV"];
+            echo "<br>";
+        }
+        ?>
 
         <input id="crea" type="submit" name="submit" value="Crea">
         <input id="cancela" type="submit" name="submit" value="Cancel·la">

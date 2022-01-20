@@ -7,9 +7,11 @@
 </head>
 <body>
     <?php
-        session_start()
+        session_start();
         echo($_SESSION['id']);
+        echo(" ");
         echo($_SESSION['action']);
+        echo(" ");
         echo($_SESSION['camps']);
     ?>
 </body>
