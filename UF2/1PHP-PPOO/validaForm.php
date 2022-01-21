@@ -16,7 +16,7 @@ if(isset($_POST["action"])){
                 return(preg_match(self::$ValidForm,$action));
             }
             public static function validarCamps($camps){
-                return(strlen($camps)>self::$ValidCamps);
+                return($camps<=self::$ValidCamps && $camps > 0);
             }
         }
         $id=$_POST["id"];
@@ -46,16 +46,15 @@ if(isset($_POST["action"])){
         if(Validar::validarCamps($camps)){
             $_SESSION['camps']=$camps;
         }else{
-            $_SESSION['campsV']="menor de 10";
+            $_SESSION['campsV']="menor de 10 y numero positiu";
             $valid=FALSE;
         }
-
+        $_SESSION['method']=$method;
         if ($valid==TRUE) {
-            header("Location: result.php");
+            header("Location: forms.php");
         }else{
             header("Location: index.php");
         }
-        
     }
 }
 ?>

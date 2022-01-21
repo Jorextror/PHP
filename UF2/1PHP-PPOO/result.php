@@ -8,11 +8,23 @@
 <body>
     <?php
         session_start();
-        echo($_SESSION['id']);
-        echo(" ");
-        echo($_SESSION['action']);
-        echo(" ");
-        echo($_SESSION['camps']);
+        $id=$_SESSION["id"];
+        $method=$_SESSION["method"];
+        $action=$_SESSION["action"];
+        $camps=$_SESSION["camps"];
+
     ?>
+    <form action="" method="post">
+        <?php 
+        for ($i=0; $i < $camps; $i++) { 
+            ?>
+            <label for="id">Id del formulari</label>
+            <input type="text" name="id" id="id"><br>
+
+        <?php}?>
+        
+        <input id="crea" type="submit" name="submit" value="Crea">
+        <input id="cancela" type="submit" name="submit" value="Cancel·la">
+    </form>
 </body>
 </html>

@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Creador de formularis</h1>
-    <form action="formularis.php" method="post">
+    <form action="validaForm.php" method="post">
         <label for="id">Id del formulari</label>
         <input type="text" name="id" id="id"><br>
         <?php session_start();
