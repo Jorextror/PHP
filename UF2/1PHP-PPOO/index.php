@@ -19,12 +19,12 @@
 
         <label for="method">Method</label>
         <select name="method" id="method">
-            <option value="Get">Get</option>
-            <option value="Post">Post</option>
+            <option value="post">Post</option>
+            <option value="get">Get</option>
         </select><br>
 
         <label for="action">Action del formulari</label>
-        <input type="text" name="action" id="action" value=".php" ><br>
+        <input type="text" name="action" id="action" value="validar.php" ><br>
         <?php 
         if (!empty($_SESSION['actionV'])) {
             echo $_SESSION['actionV'];

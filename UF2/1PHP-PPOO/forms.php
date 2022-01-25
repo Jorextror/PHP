@@ -8,28 +8,16 @@
 <body>
 <?php
 session_start();
-$idForm=$_SESSION["id"];
+$idForm=$_SESSION["idForm"];
 $method=$_SESSION["method"];
 $action=$_SESSION["action"];
 $camps=$_SESSION["camps"];
 
-// class Forms {
-//     public $nom;
-//     public $id;
-//     public $tipus;
-//     public $valor;
-// 
-//     public function __construct($nom, $id, $tipus, valor){
-//         $this->nom = $nom;
-//         $this->id = $id;
-//         $this->tipus = $tipus;
-//         $this->valor = $valor;
-//     }
-// }
 
-// $user1 = new Forms();
-// echo $user1->nom;
-// echo $user1->text();
+if (!empty($_SESSION["ValidarInput"])){
+    echo $_SESSION["ValidarInput"];
+    echo "<br>";
+}
 ?>
 
 <h1>Creador de formularis</h1>
@@ -39,15 +27,15 @@ $camps=$_SESSION["camps"];
         ?>
         <h3>Camp <?php echo $i+1 ?></h3>
         <label for="nom">Nom del input</label>
-        <input type="text" name="nom" id="nom"><br>
+        <?php echo"<input type='text' name='nom[$i]'><br>" ?>
 
         <label for="id">Id del input</label>
-        <input type="text" name="id" id="id"><br>
+        <?php echo"<input type='text' name='id[$i]'><br>" ?>
 
         <label for="tipus">Tipus del input</label>
-        <select name="tipus" id="tipus">
+        <?php echo "<select name='tipus[$i]'>" ?>
             <option value="text">Text</option>
-            <option value="numeric">Numèric</option>
+            <option value="number">Numèric</option>
             <option value="textarea">Textarea</option>
             <option value="select">Select</option>
             <option value="checkbox">Checkbox</option>
@@ -55,11 +43,12 @@ $camps=$_SESSION["camps"];
         </select><br>
 
         <label for="valor">Valor per defecte</label>
-        <input type="text" name="valor" id="valor"><br>
+        <?php echo"<input type='text' name='valor[$i]'><br>" ?>
     <?php
     }?>
     
     <input id="crea" type="submit" name="submit" value="Crea">
 </form>
+
 </body>
 </html>

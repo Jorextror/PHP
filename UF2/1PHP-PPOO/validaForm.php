@@ -2,11 +2,11 @@
 session_start();
 if(isset($_POST["action"])){
     if($_POST["submit"]=="Cancel·la"){
-        header("Location: index.html");
+        header("Location: index.php");
     }else{
         class Validar{
             public static $ValidId="/^[A-Za-z0-9\-_.]+/";
-            public static $ValidForm="/^[A-Za-z0-9\-_.].(php)$/";
+            public static $ValidForm="/[A-Za-z0-9\-_.]+.php$/";
             public static $ValidCamps=10;
 
             public static function validarId($id){
@@ -29,7 +29,7 @@ if(isset($_POST["action"])){
         unset($_SESSION['actionV']);
         unset($_SESSION['campsV']);
         if(Validar::validarId($id)){
-            $_SESSION['id']=$id;
+            $_SESSION['idForm']=$id;
         }else{
             $_SESSION['idV']="letras, numeros";
             $valid=TRUE;
@@ -50,6 +50,7 @@ if(isset($_POST["action"])){
             $valid=FALSE;
         }
         $_SESSION['method']=$method;
+
         if ($valid==TRUE) {
             header("Location: forms.php");
         }else{

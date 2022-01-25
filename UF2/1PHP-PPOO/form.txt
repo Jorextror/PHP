@@ -1,0 +1,1 @@
+<form id='fom1' action='validar.php' method='post'><input name='1' id='1' 1 type='checkbox'><label for='nom'>1</label><br><br><input name='2' id='2' 2 type='checkbox'><label for='nom'>2</label><br><br><input name='3' id='3' 3 type='submit'><br><br></form>
