@@ -6,6 +6,8 @@ require_once 'controllers/notaController.php';
 
 $controlador = new NotaController();
 $controlador->mostrarTots();
+// ---- 8 ----
+$controlador->crear();
 
 // quina lògica segueix:
 /*
