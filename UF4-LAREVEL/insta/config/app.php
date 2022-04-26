@@ -177,6 +177,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //format del temps
+        App\Providers\FormatTimeServiceProvider::class,
     ],
 
     /*
@@ -190,8 +192,15 @@ return [
     |
     */
 
+    
+
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+
+        //Alias del helper 
+        'FormatTime' => App\Helpers\FormatTime::class,
+
     ])->toArray(),
 
+    
 ];

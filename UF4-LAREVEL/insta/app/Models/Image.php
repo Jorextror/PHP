@@ -11,6 +11,15 @@ class Image extends Model
 
         protected $table='images';
 
+        /**
+         * The attributes that are mass assignable.
+         *
+         * @var array
+         */
+        protected $fillable = [
+            'user_id','image_path', 'description', 'created_at', 'updated_at',
+        ];
+
         public function comments(){
             return $this->hasMany('\App\Models\Comment')->orderBy('id','desc');
         }
