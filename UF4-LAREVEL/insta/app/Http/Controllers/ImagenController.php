@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Image;
 use App\Models\User;
+use App\Models\Comment;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -49,4 +50,13 @@ class ImagenController extends Controller
         $file=Storage::disk("img")->get($filename);
         return response($file,200);
     }
+
+    public function comments($filename){
+        foreach(Image::all() as $img){
+            if($img->id==$filename){
+                return view('detail',['img'=>$img]);
+            }
+        }
+    }
 }
+

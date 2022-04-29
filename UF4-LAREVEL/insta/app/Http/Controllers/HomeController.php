@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Image;
 use App\Models\User;
+use App\Models\Comment;
+
 
 class HomeController extends Controller
 {

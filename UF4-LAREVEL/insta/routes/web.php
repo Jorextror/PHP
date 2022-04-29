@@ -50,8 +50,12 @@ Route::get('/img{filename}', [App\Http\Controllers\ImagenController::class, 'get
 // get id user
 Route::get('/user{userid}', [App\Http\Controllers\UserController::class, 'getuser'])->name('getuser');
 // detaills
-Route::get('/coment{userid}', [App\Http\Controllers\CommentController::class, 'index'])->name('detail');
+Route::get('/coment{filename}', [App\Http\Controllers\CommentController::class, 'index'])->name('detail');
 Route::post('/comentup', [App\Http\Controllers\CommentController::class, 'comment'])->name('comentar');
+//coment
+Route::get('/comments{filename}', [App\Http\Controllers\ImagenController::class, 'comments'])->name('comments');
+//eliminar comnetario
+Route::get('/eliminar_comentario{filename}', [App\Http\Controllers\CommentController::class, 'delcomment'])->name('eliminar.comentario');
 
 Auth::routes();
 

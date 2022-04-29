@@ -6,7 +6,7 @@
         <div class="col-md-8">
             @if(!empty($imgs) && $imgs->count() )
             @foreach($imgs as $img)
-            <!-- {{var_dump($img);}} -->
+            <!-- {{var_dump($img->comments);}} -->
             <div class="card">
                 <div class="card-header">
                     <img style="width:40px; height:40px; border-radius: 50%; " src="{{ route('getimage', ['filename'=>$img->user->image]) }}" class="avatar">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="nickname date">
                         {{$img->description }}
-                        <a style="width:100px;" class="list-group-item" href="coment">Comentar</a>
+                        <a style="width:100px;" class="list-group-item" href="{{'coment'.$img->id}}">Comentar</a>
                     </div>
                     
                 </div>

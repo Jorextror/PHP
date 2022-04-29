@@ -12,4 +12,9 @@ class Comment extends Model
     protected $fillable = [
         'user_id','image_id', 'content', 'created_at', 'updated_at',
     ];
+
+    public function user(){
+        return $this->belongsTo('\App\Models\User', 'user_id');
+    }
+
 }
