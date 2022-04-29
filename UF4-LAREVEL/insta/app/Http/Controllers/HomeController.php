@@ -38,7 +38,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $imgs = Image::paginate(10);
+        $imgs = Image::paginate(4);
         return view('home',compact('imgs'));
     }
 

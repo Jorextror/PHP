@@ -44,14 +44,12 @@
                     <div class="nickname date"> 
                     @if(!empty($img->comments->content) && $img->count())
                     
-                    @foreach($img as $comment)
                     {{ '@'.$img->user->nick .' : '}} {{ $img->comments->content }}
                         <!-- si user id es igual a user id del comentario puede borrar o si es el propio de la img  -->
                         @if(Auth::user()->id==$img->user_id || Auth::user()->id==$img->comments->id)
                         <a href="{{ route('eliminar.comentario', ['filename'=>$img->comments->id]) }}" >Eliminar</a>
                         @endif
                     </div>
-                    @endforeach
                     @endif
 
                 </div>
